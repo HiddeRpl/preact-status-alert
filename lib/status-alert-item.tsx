@@ -53,7 +53,10 @@ export class StatusAlertItem extends Component<StatusAlertItemProps, {}> {
           <div className={`status-alert__box ${this.boxClassName}`}>
             {this.alertOptions.withCloseIcon && (
               <div className="status-alert__icon-on-right-holder">
-                <div className="status-alert__icon is-close-icon" onClick={this.removeAlert} />
+                <div
+                  className={`status-alert__icon is-close-icon ${this.props.alert.type === 'warning' ? 'is-dark' : ''}`}
+                  onClick={this.removeAlert}
+                />
               </div>
             )}
             {this.alertOptions.withIcon && (
